@@ -122,14 +122,6 @@
       <div class="container has-pagehead is-pagetitle">
         <div class="section">
           <h5 class="pagetitle">MUZEUL SATULUI BĂNĂȚEAN</h5>
-          <!-- <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" 
-            style=" filter: brightness(90%)">
-              Romanian<i class="mdi mdi-chevron-down"></i>
-            </a>
-            <ul id="languageDropdown" class="dropdown-content" style="display: block; width: 211.945px; left: 24px; top: 496.039px; height: 268px; transform-origin: 0px 0px; opacity: 1; transform: scaleX(1) scaleY(1);">
-              <li><a href="#eng" data-lang="english">English</a></li>
-              <li><a href="#ro" data-lang="romanian">Romanian</a></li>
-            </ul> -->
 
             <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" style=" filter: brightness(90%)">
               <span id="selectedLanguage">Romanian</span><i class="mdi mdi-chevron-down"></i>
@@ -186,9 +178,11 @@
                   <audio 
                     id="audio-content"
                     controls="controls"
-                    style="filter: drop-shadow(5px 5px 5px grey); width:100% "
+                    style="filter: drop-shadow(5px 5px 5px grey); width:100%"
                   >
+                    <!-- Initially, use the Romanian audio source -->
                     <source
+                      id="audio-source"
                       src="assets/audio/msb001a-ro.mp3"
                       type="audio/mpeg"
                     />
@@ -209,7 +203,7 @@
                       </p>
                     </div>
                     
-                    <div id="romanianText">
+                    <div id="romanianText" style="display: none;">
                       <p id="text-content2">Datată la sfârșitul secolului al XVIII-lea, casa de la Bata - Arad, casa figurează pe lista monumentelor istorice din județul Timiș. Casa este singura din muzeu care are acoperiș din paie și dovedește priceperea bărbaților  meșteri. Intrarea se făcea prin tindă, unde se află și sistemul de încălzit și gătit, iar apoi în camera de locuit; soarele își aducea lumina înăuntru prin două ferestre mici, protejate în exterior de obloane simple din scânduri. Gospodăria de la Bata dă dreptate etnografilor care vorbesc despre arhitectura țărănească veche ca despre o „civilizație a lemnului”.
                       </p>
                     </div>
@@ -352,7 +346,7 @@
     </script>
 
 
-    <script>
+    <!-- <script>
   document.addEventListener('DOMContentLoaded', function() {
     var dropdowns = document.querySelectorAll('.dropdown-trigger');
     M.Dropdown.init(dropdowns, {coverTrigger: false});
@@ -360,7 +354,7 @@
     var dropdownItems = document.querySelectorAll('#languageDropdown li');
     dropdownItems.forEach(function(item) {
       item.addEventListener('click', function() {
-        var selectedLanguage = this.querySelector('a').getAttribute('data-lang');
+        var selectedLanguage = localStorage.getItem('selectedLanguage');
         var audio = document.getElementById('audio-content')
         
         if (selectedLanguage === "english") {
@@ -379,7 +373,7 @@
       });
     });
   });
-</script>
+</script> -->
 
 <script>
   // Function to set the selected language
@@ -401,6 +395,20 @@
         }
       }
       document.documentElement.lang = selectedLanguage; // Set HTML language attribute
+
+       // Hide all text content
+       document.getElementById('englishText').style.display = 'none';
+        document.getElementById('romanianText').style.display = 'none';
+        // Show the text content based on the selected language
+        document.getElementById(selectedLanguage + 'Text').style.display = 'block';
+        // Update the dropdown trigger button text
+        document.getElementById('selectedLanguage').textContent = selectedLanguage === 'english' ? 'English' : 'Romanian';
+      
+
+        var audioSource = document.getElementById('audio-source');
+        audioSource.src = 'assets/audio/msb001a-' + (selectedLanguage === 'english' ? 'en' : 'ro') + '.mp3';
+        // Reload the audio element to apply the new source
+        document.getElementById('audio-content').load();
     }
   }
 
