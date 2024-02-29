@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class=" ">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Muzeul Satului Bănățean Mobile App: Media Box</title>
+    <meta content="Muzeul Satului Bănățean Mobile App" name="description" />
+    <meta content="themepassion" name="author" />
+
+    <link rel="manifest" href="assets/images/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link
+      href="assets/css/preloader.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <link
+      href="modules/materialize/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="modules/fonts/mdi/appicon/appicon.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="modules/fonts/mdi/materialdesignicons.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="modules/perfect-scrollbar/perfect-scrollbar.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <!-- CORE CSS FRAMEWORK - END -->
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link
+      href="modules/fancybox/jquery.fancybox.min.css"
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+    />
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE CSS TEMPLATE - START -->
+
+    <link
+      href="assets/css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+      id="main-style"
+    />
+    <!-- CORE CSS TEMPLATE - END -->
+
+    <style>
+      #my-qr-reader {
+        padding: 20px !important;
+        border: 1.5px solid #b2b2b2 !important;
+        border-radius: 8px;
+      }
+
+      #my-qr-reader img[alt="Info icon"] {
+        display: none;
+      }
+
+      #my-qr-reader img[alt="Camera based scan"] {
+        width: 100px !important;
+        height: 100px !important;
+      }
+    </style>
+  </head>
+  <!-- END HEAD -->
+
+  <!-- BEGIN BODY -->
+
+  <body
+    class="menu-full header-image html"
+    data-header="light"
+    data-footer="light"
+    data-header_align="app"
+    data-menu_type="left"
+    data-menu="light"
+    data-menu_icons="on"
+    data-footer_type="left"
+    data-site_mode="light"
+    data-footer_menu="show"
+    data-footer_menu_style="light"
+  >
+    <div class="preloader-background">
+      <div class="preloader-wrapper">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <!-- START navigation -->
+    <nav class="fix_topscroll logo_on_fixed topbar navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="">
+          <img
+            width="20px"
+            src="assets/images/icons/android-icon-72x72.png"
+            alt=""
+          />
+          MSB
+        </a>
+
+        <a
+          href="#"
+          data-target=""
+          class="waves-effect waves-circle navicon back-button htmlmode show-on-large"
+          ><i class="mdi mdi-chevron-left" data-page=""></i
+        ></a>
+
+        <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+      </div>
+    </nav>
+
+    <div class="menu-close"><i class="mdi mdi-close"></i></div>
+
+    <div class="content-area">
+      <div class="pagehead-bg primary-bg"></div>
+
+      <div class="container has-pagehead is-pagetitle">
+        <div class="section">
+          <h5 class="pagetitle">Scan QR Code</h5>
+        </div>
+      </div>
+
+      <div class="container over">
+        <div class="section">
+          <div class="spacer"></div>
+
+          <div class="row">
+            <div class="col s12 pad-0">
+              <div
+                class="section"
+                style="display: flex; justify-content: center"
+              >
+                <div
+                  id="my-qr-reader"
+                  style="max-width: 500px; max-height: 500px"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer center social-colored">
+        <div class="container footer-content">
+          <div class="row">
+            <div class="">
+              <h5 class="logo">Muzeul Satului Bănățean</h5>
+            </div>
+            <div class="link-wrap">
+              <ul class="link-ul">
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-phone"></i> +1 234 567 890</a
+                  >
+                </li>
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-email"></i> email@example.com</a
+                  >
+                </li>
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-map-marker"></i> FF 1, Sector-8, Tech
+                    Street, NY, USA</a
+                  >
+                </li>
+              </ul>
+              <ul class="social-wrap">
+                <li class="social">
+                  <a class="" href="#!"><i class="mdi mdi-facebook"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-twitter"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-dribbble"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-google-plus"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container">
+            &copy; Copyright
+            <a class="">Muzeul Satului Bănățean</a>. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+      <div class="backtotop">
+        <a class="btn-floating btn primary-bg">
+          <i class="mdi mdi-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+    <!--.content-area-->
+
+    <div class="footer-menu circular">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="mdi mdi-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="qr-scan.html" class="active">
+            <i class="mdi mdi-qrcode"></i>
+            <span>QR Scan</span>
+          </a>
+        </li>
+        <li>
+          <a href="input.html">
+            <i class="mdi mdi-apps"></i>
+            <span>Input</span>
+          </a>
+        </li>
+        <li>
+          <a href="list.html">
+            <i class="mdi mdi-beaker"></i>
+            <span>List</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html">
+            <i class="mdi mdi-subdirectory-arrow-right"></i>
+            <span>Exit</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="assets/js/pwa.js"></script>
+
+    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+    <!-- CORE JS FRAMEWORK - START -->
+    <script src="modules/jquery/jquery-2.2.4.min.js"></script>
+    <script src="modules/materialize/materialize.js"></script>
+    <script src="modules/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/variables.js"></script>
+    <!-- CORE JS FRAMEWORK - END -->
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <script src="modules/fancybox/jquery.fancybox.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE TEMPLATE JS - START -->
+    <script src="modules/app/init.js"></script>
+    <script src="modules/app/settings.js"></script>
+
+    <script src="modules/app/scripts.js"></script>
+
+    <!-- END CORE TEMPLATE JS - END -->
+
+    <script src="assets/js/preloader.js"></script>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <script>
+      function domReady(fn) {
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          setTimeout(fn, 1000);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+
+      domReady(function () {
+        // If found you qr code
+        function onScanSuccess(decodeText, decodeResult) {
+          // alert("You Qr is : " + decodeText, decodeResult);
+
+          window.location.href =
+            "https://tm.autocom.ro/index.php?name=msb" + decodeText;
+        }
+
+        let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
+          fps: 10,
+          qrbos: 250,
+        });
+        htmlscanner.render(onScanSuccess);
+      });
+    </script>
+  </body>
+</html>

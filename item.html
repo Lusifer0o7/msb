@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class=" ">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MSB</title>
+    <meta content="Odis Mobile App" name="description" />
+    <meta content="themepassion" name="author" />
+
+    <link rel="manifest" href="assets/images/icons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/images/icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- CORE CSS FRAMEWORK - START -->
+    <link
+      href="assets/css/preloader.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <link
+      href="modules/materialize/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <link
+      href="modules/fonts/mdi/appicon/appicon.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="modules/fonts/mdi/materialdesignicons.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+    <link
+      href="modules/perfect-scrollbar/perfect-scrollbar.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+    />
+
+    <!-- CORE CSS FRAMEWORK - END -->
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <link
+      href="modules/fancybox/jquery.fancybox.min.css"
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+    />
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE CSS TEMPLATE - START -->
+
+    <link
+      href="assets/css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen"
+      id="main-style"
+    />
+
+    <!-- CORE CSS TEMPLATE - END -->
+  </head>
+  <!-- END HEAD -->
+
+  <!-- BEGIN BODY -->
+
+  <body
+    class="menu-full header-image html"
+    data-header="light"
+    data-footer="light"
+    data-header_align="app"
+    data-menu_type="left"
+    data-menu="light"
+    data-menu_icons="on"
+    data-footer_type="left"
+    data-site_mode="light"
+    data-footer_menu="show"
+    data-footer_menu_style="light"
+  >
+    <div class="preloader-background">
+      <div class="preloader-wrapper">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <!-- START navigation -->
+    <nav class="fix_topscroll logo_on_fixed topbar navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="brand-logo"
+          >Muzeul Satului Bănățean</a
+        >
+
+        <a
+          href="#"
+          data-target=""
+          class="waves-effect waves-circle navicon back-button htmlmode show-on-large"
+          ><i class="mdi mdi-chevron-left" data-page=""></i
+        ></a>
+
+       
+        <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+      </div>
+    </nav>
+
+    <!-- END navigation -->
+
+    
+    <div class="menu-close"><i class="mdi mdi-close"></i></div>
+
+    <div class="content-area">
+      <div class="pagehead-bg primary-bg"></div>
+
+      <div class="container has-pagehead is-pagetitle">
+        <div class="section">
+          <h5 class="pagetitle">MUZEUL SATULUI BĂNĂȚEAN</h5>
+          <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" 
+            style=" filter: brightness(90%)">
+              Romanian<i class="mdi mdi-chevron-down"></i>
+            </a>
+            <ul id="languageDropdown" class="dropdown-content" style="display: block; width: 211.945px; left: 24px; top: 496.039px; height: 268px; transform-origin: 0px 0px; opacity: 1; transform: scaleX(1) scaleY(1);">
+              <li><a href="#eng" data-lang="english">English</a></li>
+              <li><a href="#ro" data-lang="romanian">Romanian</a></li>
+            </ul>
+
+        </div>
+      </div>
+
+      <div class="container over">
+        <div class="section">
+          <div class="spacer"></div>
+
+          <div class="row">
+            <div class="row s12 pad-0">
+
+              <h5 class="bot-20 sec-tit">
+                Casa de la Bata
+            </h5>
+            
+
+              <div class="card gray">
+
+                <div class="card-content">
+                  <div class="font-range-container">
+
+                      <i
+                        class="mdi mdi-format-size"
+                        style="font-size: 30px"></i>
+
+                      <span id="sizechip" class="chip blue lighten-2 white-text" style="float: right;">125%</span>
+
+
+                      <input id="fontrange" type="range"  min="50" max="200" onchange="changeFontSize()"/>
+                    </div>
+                    
+                  </div>
+
+                <div class="card-image">
+                  <a
+                    class="img-wrap round-top"
+                    href="assets/images/media-1.jpg"
+                    data-fancybox="images"
+                    data-caption="Working at Office"
+                  >
+                    <img alt="image" src="assets/images/slider-3.jpg" />
+                  </a>
+                  <span class="card-title">Exterior</span>
+                </div>
+                <div class="card-action">
+                  <audio
+                    controls="controls"
+                    style="filter: drop-shadow(5px 5px 5px grey); ;"
+                  >
+                    <source
+                      src="https://tm.autocom.ro/0101/msb001a-ro.mp3"
+                      type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                  </audio>
+                </div>
+                <div class="spacer"></div>
+                  
+
+                <div class="card-content">
+
+                  <div>
+
+                    <div id="englishText" style="display: none;">
+                      <p id="text-content">The House from Bata - outside
+                        Dated at the end of the 18th century, the house from Bata - Arad - appears on the list of historical monuments from Timiș County. The house is the only one in the museum that has a thatch roof and proves the craftsmanship of the skilled thatchers. The entry was done through the porch, where there was the heating and cooking system, into the living room. The sun lit the room through two small windows, protected by simple wooden shutters on the outside. The household from Bata confirms the ethnographers’ opinion that the old folk architecture is a “civilisation of the wood”.</p>
+                    </div>
+                    
+                    <div id="romanianText">
+                      <p id="text-content">Datată la sfârșitul secolului al XVIII-lea, casa de la Bata - Arad, casa figurează pe lista monumentelor istorice din județul Timiș. Casa este singura din muzeu care are acoperiș din paie și dovedește priceperea bărbaților – meșteri. Intrarea se făcea prin tindă, unde se află și sistemul de încălzit și gătit, iar apoi în camera de locuit; soarele își aducea lumina înăuntru prin două ferestre mici, protejate în exterior de obloane simple din scânduri. Gospodăria de la Bata dă dreptate etnografilor care vorbesc despre arhitectura țărănească veche ca despre o „civilizație a lemnului”.</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <footer class="page-footer center social-colored">
+        <div class="container footer-content">
+          <div class="row">
+            <div class="">
+              <h5 class="logo">Muzeul Satului Bănățean</h5>
+            </div>
+            <div class="link-wrap">
+              <ul class="link-ul">
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-phone"></i> +1 234 567 890</a
+                  >
+                </li>
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-email"></i> email@example.com</a
+                  >
+                </li>
+                <li>
+                  <a class="" href="#!"
+                    ><i class="mdi mdi-map-marker"></i> FF 1, Sector-8, Tech
+                    Street, NY, USA</a
+                  >
+                </li>
+              </ul>
+              <ul class="social-wrap">
+                <li class="social">
+                  <a class="" href="#!"><i class="mdi mdi-facebook"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-twitter"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-dribbble"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-google-plus"></i></a>
+                  <a class="" href="#!"><i class="mdi mdi-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <div class="container">
+            &copy; Copyright
+            <a
+              class=""
+              ></a
+            >. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+      <div class="backtotop">
+        <a class="btn-floating btn primary-bg">
+          <i class="mdi mdi-chevron-up"></i>
+        </a>
+      </div>
+    </div>
+    <!--.content-area-->
+
+    <div class="footer-menu circular">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="mdi mdi-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="qr-scan.html">
+            <i class="mdi mdi-qrcode"></i>
+            <span>QR Scan</span>
+          </a>
+        </li>
+        <li>
+          <a href="input.html">
+            <i class="mdi mdi-apps"></i>
+            <span>Input</span>
+          </a>
+        </li>
+        <li>
+          <a href="list.html">
+            <i class="mdi mdi-beaker"></i>
+            <span>List</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html">
+            <i class="mdi mdi-subdirectory-arrow-right"></i>
+            <span>Exit</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="assets/js/pwa.js"></script>
+
+    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+    <!-- CORE JS FRAMEWORK - START -->
+    <script src="modules/jquery/jquery-2.2.4.min.js"></script>
+    <script src="modules/materialize/materialize.js"></script>
+    <script src="modules/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/variables.js"></script>
+    <!-- CORE JS FRAMEWORK - END -->
+
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+    <script src="modules/fancybox/jquery.fancybox.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
+
+    <!-- CORE TEMPLATE JS - START -->
+    <script src="modules/app/init.js"></script>
+    <script src="modules/app/settings.js"></script>
+
+    <script src="modules/app/scripts.js"></script>
+
+    <!-- END CORE TEMPLATE JS - END -->
+
+    <script src="assets/js/preloader.js"></script>
+    <script>
+      function changeFontSize(){
+        var size = document.getElementById('fontrange').value;
+        document.getElementById('sizechip').innerHTML = size +"%";
+        document.getElementById('text-content').style.fontSize = size + "%"
+        document.getElementById('text-content').style.lineHeight = size + "%"
+      }
+    </script>
+
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(dropdowns, {coverTrigger: false});
+
+    var dropdownItems = document.querySelectorAll('#languageDropdown li');
+    dropdownItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        var selectedLanguage = this.querySelector('a').getAttribute('data-lang');
+        
+        if (selectedLanguage === "english") {
+          document.getElementById("englishText").style.display = "block";
+          document.getElementById("romanianText").style.display = "none";
+          document.querySelector('.dropdown-trigger').innerHTML= `English <i class="mdi mdi-chevron-down"></i>`;
+        } else if (selectedLanguage === "romanian") {
+          document.getElementById("englishText").style.display = "none";
+          document.getElementById("romanianText").style.display = "block";
+          document.querySelector('.dropdown-trigger').innerHTML= `Romanian <i class="mdi mdi-chevron-down"></i>`;
+        }
+      });
+    });
+  });
+</script>
+    
+  </body>
+</html>
