@@ -5,7 +5,7 @@
   "scope": ".",
   "orientation": "portrait",
   "lang": "en-US",
-  "start_url": "/Muzeul Satului Bănățean-html/app/",
+  "start_url": "https://msb-project.onrender.com/index.html",
   "background_color": "#ffffff",
   "theme_color": "#ff8a65",
   "display": "standalone",
