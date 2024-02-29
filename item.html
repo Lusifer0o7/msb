@@ -96,21 +96,18 @@
     </div>
 
     <!-- START navigation -->
-    <nav class="fix_topscroll logo_on_fixed topbar navigation">
+    <nav class="fix_topscroll logo_on_fixed  topbar navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="index.html" class="brand-logo"
-          >Muzeul Satului Bănățean</a
-        >
-
-        <a
-          href="#"
-          data-target=""
-          class="waves-effect waves-circle navicon back-button htmlmode show-on-large"
-          ><i class="mdi mdi-chevron-left" data-page=""></i
-        ></a>
-
-       
-        <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+        <a id="logo-container" href="index.html" class=" brand-logo " >
+            <img
+              style="width: 17%; padding-top: 5px;"
+             src="assets/images/icons/android-icon-72x72.png" alt=""/>
+            MSB
+          </a>     
+          
+          <a href="#" data-target="" class="waves-effect waves-circle navicon back-button htmlmode show-on-large "><i class="mdi mdi-chevron-left" data-page=""></i></a>
+    
+        
       </div>
     </nav>
 
@@ -197,12 +194,14 @@
                   <div>
 
                     <div id="englishText" style="display: none;">
-                      <p id="text-content">The House from Bata - outside
-                        Dated at the end of the 18th century, the house from Bata - Arad - appears on the list of historical monuments from Timiș County. The house is the only one in the museum that has a thatch roof and proves the craftsmanship of the skilled thatchers. The entry was done through the porch, where there was the heating and cooking system, into the living room. The sun lit the room through two small windows, protected by simple wooden shutters on the outside. The household from Bata confirms the ethnographers’ opinion that the old folk architecture is a “civilisation of the wood”.</p>
+                      <p id="text-content1">The House from Bata - outside
+                        Dated at the end of the 18th century, the house from Bata - Arad - appears on the list of historical monuments from Timiș County. The house is the only one in the museum that has a thatch roof and proves the craftsmanship of the skilled thatchers. The entry was done through the porch, where there was the heating and cooking system, into the living room. The sun lit the room through two small windows, protected by simple wooden shutters on the outside. The household from Bata confirms the ethnographers opinion that the old folk architecture is a “civilisation of the wood”.
+                      </p>
                     </div>
                     
                     <div id="romanianText">
-                      <p id="text-content">Datată la sfârșitul secolului al XVIII-lea, casa de la Bata - Arad, casa figurează pe lista monumentelor istorice din județul Timiș. Casa este singura din muzeu care are acoperiș din paie și dovedește priceperea bărbaților – meșteri. Intrarea se făcea prin tindă, unde se află și sistemul de încălzit și gătit, iar apoi în camera de locuit; soarele își aducea lumina înăuntru prin două ferestre mici, protejate în exterior de obloane simple din scânduri. Gospodăria de la Bata dă dreptate etnografilor care vorbesc despre arhitectura țărănească veche ca despre o „civilizație a lemnului”.</p>
+                      <p id="text-content2">Datată la sfârșitul secolului al XVIII-lea, casa de la Bata - Arad, casa figurează pe lista monumentelor istorice din județul Timiș. Casa este singura din muzeu care are acoperiș din paie și dovedește priceperea bărbaților  meșteri. Intrarea se făcea prin tindă, unde se află și sistemul de încălzit și gătit, iar apoi în camera de locuit; soarele își aducea lumina înăuntru prin două ferestre mici, protejate în exterior de obloane simple din scânduri. Gospodăria de la Bata dă dreptate etnografilor care vorbesc despre arhitectura țărănească veche ca despre o „civilizație a lemnului”.
+                      </p>
                     </div>
 
                   </div>
@@ -335,8 +334,10 @@
       function changeFontSize(){
         var size = document.getElementById('fontrange').value;
         document.getElementById('sizechip').innerHTML = size +"%";
-        document.getElementById('text-content').style.fontSize = size + "%"
-        document.getElementById('text-content').style.lineHeight = size + "%"
+        document.getElementById('text-content1').style.fontSize = size + "%"
+        document.getElementById('text-content1').style.lineHeight = size + "%"
+        document.getElementById('text-content2').style.fontSize = size + "%"
+        document.getElementById('text-content2').style.lineHeight = size + "%"
       }
     </script>
 
