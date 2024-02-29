@@ -122,13 +122,21 @@
       <div class="container has-pagehead is-pagetitle">
         <div class="section">
           <h5 class="pagetitle">MUZEUL SATULUI BĂNĂȚEAN</h5>
-          <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" 
+          <!-- <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" 
             style=" filter: brightness(90%)">
               Romanian<i class="mdi mdi-chevron-down"></i>
             </a>
             <ul id="languageDropdown" class="dropdown-content" style="display: block; width: 211.945px; left: 24px; top: 496.039px; height: 268px; transform-origin: 0px 0px; opacity: 1; transform: scaleX(1) scaleY(1);">
               <li><a href="#eng" data-lang="english">English</a></li>
               <li><a href="#ro" data-lang="romanian">Romanian</a></li>
+            </ul> -->
+
+            <a class="dropdown-trigger btn" href="#" data-target="languageDropdown" style=" filter: brightness(90%)">
+              <span id="selectedLanguage">Romanian</span><i class="mdi mdi-chevron-down"></i>
+            </a>
+            <ul id="languageDropdown" class="dropdown-content">
+              <li><a href="#eng" onclick="setLanguage('english')" data-lang="english">English</a></li>
+              <li><a href="#ro" onclick="setLanguage('romanian')" data-lang="romanian">Romanian</a></li>
             </ul>
 
         </div>
@@ -175,16 +183,18 @@
                   <span class="card-title">Exterior</span>
                 </div>
                 <div class="card-action">
-                  <audio
+                  <audio 
+                    id="audio-content"
                     controls="controls"
-                    style="filter: drop-shadow(5px 5px 5px grey); width:100% ;"
+                    style="filter: drop-shadow(5px 5px 5px grey); width:100% "
                   >
                     <source
-                      src="https://tm.autocom.ro/0101/msb001a-ro.mp3"
+                      src="assets/audio/msb001a-ro.mp3"
                       type="audio/mpeg"
                     />
                     Your browser does not support the audio element.
                   </audio>
+                  
                 </div>
                 <div class="spacer"></div>
                   
@@ -351,18 +361,59 @@
     dropdownItems.forEach(function(item) {
       item.addEventListener('click', function() {
         var selectedLanguage = this.querySelector('a').getAttribute('data-lang');
+        var audio = document.getElementById('audio-content')
         
         if (selectedLanguage === "english") {
+          audio.src = "assets/audio/msb001a-en.mp3"
+          audio.load()
           document.getElementById("englishText").style.display = "block";
           document.getElementById("romanianText").style.display = "none";
-          document.querySelector('.dropdown-trigger').innerHTML= `English <i class="mdi mdi-chevron-down"></i>`;
+          document.getElementById('selectedLanguage').innerHTML= `English`;
         } else if (selectedLanguage === "romanian") {
+          audio.src = "assets/audio/msb001a-ro.mp3"
+          audio.load()
           document.getElementById("englishText").style.display = "none";
           document.getElementById("romanianText").style.display = "block";
-          document.querySelector('.dropdown-trigger').innerHTML= `Romanian <i class="mdi mdi-chevron-down"></i>`;
+          document.getElementById('selectedLanguage').innerHTML= `Romanian`;
         }
       });
     });
+  });
+</script>
+
+<script>
+  // Function to set the selected language
+  function setLanguage(lang) {
+    localStorage.setItem('selectedLanguage', lang); // Store the selected language in local storage
+    updateLanguage(); // Call function to update the language immediately
+  }
+
+  // Function to update the language based on the stored value
+  function updateLanguage() {
+    var selectedLanguage = localStorage.getItem('selectedLanguage');
+    if (selectedLanguage) {
+      var languageDropdown = document.getElementById('languageDropdown');
+      var languageOptions = languageDropdown.getElementsByTagName('a');
+      for (var i = 0; i < languageOptions.length; i++) {
+        if (languageOptions[i].dataset.lang === selectedLanguage) {
+          document.getElementById('selectedLanguage').textContent = languageOptions[i].textContent;
+          break;
+        }
+      }
+      document.documentElement.lang = selectedLanguage; // Set HTML language attribute
+    }
+  }
+
+  // Call updateLanguage on page load
+  window.onload = updateLanguage;
+
+  // Initialize Materialize dropdown
+  document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.dropdown-trigger');
+    var options = {
+      coverTrigger: false // prevents dropdown from covering button
+    };
+    var instances = M.Dropdown.init(dropdowns, options);
   });
 </script>
     
