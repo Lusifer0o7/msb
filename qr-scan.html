@@ -154,10 +154,7 @@
                 class="section"
                 style="display: flex; justify-content: center"
               >
-                <div
-                  id="my-qr-reader"
-                  style="max-width: 500px; max-height: 500px"
-                ></div>
+                <div id="my-qr-reader"></div>
               </div>
             </div>
           </div>
@@ -305,7 +302,11 @@
         let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
           fps: 10,
           qrbos: 250,
+          videoConstraints: {
+            facingMode: { exact: "environment" },
+          },
         });
+
         htmlscanner.render(onScanSuccess);
       });
     </script>
