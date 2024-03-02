@@ -6,9 +6,14 @@
   
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muzeul Satului Bănățean Mobile App: Responsive Grids</title>
+  <title>MSB Audio Guide </title>
   <meta content="Muzeul Satului Bănățean Mobile App" name="description" />
   <meta content="themepassion" name="author" />
+  <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/icons/logo-msb-554x884.png"
+    />
 
 
   <!-- App Icons -->
@@ -52,6 +57,80 @@
 
 
 <body class=" menu-full header-image html"  data-header="light" data-footer="light"  data-header_align="app"  data-menu_type="left" data-menu="light" data-menu_icons="on" data-footer_type="left" data-site_mode="light" data-footer_menu="show" data-footer_menu_style="light"  >
+    
+
+    <script>
+        var testInBrowser = true; // set this to true to test in browser
+if (   testInBrowser 
+    || 
+       /Android/i.test(navigator.userAgent)
+    && /Chrome/i.test(navigator.userAgent)
+    && window.matchMedia('(display-mode: fullscreen)').matches
+    ) {
+  if (getCookie('closing') == "true") {
+    setCookie('closing', '', 1);
+    showCloseDialog();
+    returnToOriginalPageIfUserCancels();
+    window.stop();
+  } else {
+    history.pushState(null, null);
+    window.addEventListener('popstate', function () {
+      setCookie('closing', 'true', 10);
+      history.go(-(history.length - 2));
+    })
+  }
+}
+function showCloseDialog() {
+  document.body.style='background-color:#aaa;';
+  var s = document.createElement('SPAN');
+  s.style='border-radius:10px;padding:50px 30px 40px 30px;display:table;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;background-color:#fff;font-size:30px;font-family:arial;font-weight:bold;';
+  s.appendChild(document.createTextNode('Click back button again to close'));
+  s.appendChild(document.createElement('BR'));
+  s.appendChild(document.createElement('BR'));
+  s.appendChild(document.createTextNode('or'));
+  s.appendChild(document.createElement('BR'));
+  s.appendChild(document.createElement('BR'));
+  var b = document.createElement('BUTTON');
+  b.style='font-size:30px;font-family:arial;background:none!important;border:none;color:blue;font-weight:bold;';
+  b.innerHTML='Cancel'
+  b.addEventListener('click',function(){outsideResolve()});
+  s.appendChild(b);
+  s.appendChild(document.createElement('BR'));
+  s.appendChild(document.createElement('BR'));
+  s.appendChild(document.createTextNode('to go back'));
+  document.body.appendChild(s);
+}
+async function returnToOriginalPageIfUserCancels() {
+  await new Promise(function(resolve) {
+    outsideResolve = resolve;
+  });
+  var steps = history.length - 1;
+  if (steps==1) steps=0; // takes care of the case when user clicks back on first page
+  history.go(steps);
+}
+function setCookie(cname, cvalue, exseconds) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exseconds * 1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+    </script>
+    
     <div class="preloader-background">
       <div class="preloader-wrapper">
         <div class="loader">
@@ -66,8 +145,8 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="index.html" class=" brand-logo " >
         <img
-          style="width: 17%; padding-top: 5px;"
-         src="assets/images/icons/android-icon-72x72.png" alt=""/>
+          style="max-height: 45%;"
+         src="assets/images/icons/logo-msb-554x884.png" alt=""/>
         MSB
       </a>     
       
@@ -121,7 +200,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Gospodaria de la Capâlna? - </strong>
+                            <strong>Gospodăria de la Căpâlnaș - </strong>
                             <div>
                             <a class="waves-effect waves-light btn bg-primary " href="https://tm.autocom.ro/index.php?name=msb002a">Ext</a>
                             <a class="waves-effect waves-light btn bg-primary " href="http://tm.autocom.ro/index.php?name=msb002b">Int</a>
@@ -135,7 +214,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong >Gospodaria germana Biled - </strong>
+                            <strong >Gospodăria germană Biled- </strong>
                             <div>
                             <a class="waves-effect waves-light btn bg-primary " href="https://tm.autocom.ro/index.php?name=msb003a">Ext</a>
                             <a class="waves-effect waves-light btn bg-primary " href="http://tm.autocom.ro/index.php?name=msb003b">Int</a>
@@ -149,7 +228,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Scoala din B�rna - </strong>
+                            <strong>Şcoala din Bârna - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb004a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb004b">Int</a>
@@ -191,7 +270,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa de la Cavaran - </strong>
+                            <strong>Casa de la Căvăran -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb007a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb007b">Int</a>
@@ -205,7 +284,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa ucraineana - </strong>
+                            <strong>Casa ucraineană -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb008a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb008b">Int</a>
@@ -233,7 +312,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Primaria din Sarazani - </strong>
+                            <strong>Primăria din Sărăzani - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb010a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb010b">Int</a>
@@ -247,7 +326,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Birtu?ul din B�rna - </strong>
+                            <strong>Birtuțul din Bârna - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb011a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb011b">Int</a>
@@ -261,7 +340,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa maghiara din Bab?a - </strong>
+                            <strong>Casa maghiară din Babșa -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb012a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb012b">Int</a>
@@ -288,7 +367,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Vama veche de la Timi?oara - </strong>
+                            <strong>Vama veche de la Timișoara - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb014a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb014b">Int</a>
@@ -302,7 +381,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa de la Jupănești - </strong>
+                            <strong>Casa de olar de la Jupânești -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb015a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb015b">Int</a>
@@ -316,7 +395,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Sala?ul slovac de la Nadlac - </strong>
+                            <strong>Şălașul slovac de la Nădlac - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb016a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb016b">Int</a>
@@ -330,7 +409,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa ?vabeasca - �tare ca fierul, iute ca o?elul�! - </strong>
+                            <strong>Casa șvăbească - „tare ca fierul, iute ca oțelul”! -  </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb017a">Ext</a>
                             </div>
@@ -346,7 +425,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa maghiara de pescar - pescuirea ve?niciei - </strong>
+                            <strong>Casa maghiară de pescar - pescuirea veșniciei - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb018a">Ext</a>
                             </div>
@@ -359,7 +438,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Gospodaria rom�neasca - de toate pentru to?i - </strong>
+                            <strong>Gospodăria românească - de toate pentru toți -  </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb019a">Ext</a>
                             </div>
@@ -372,7 +451,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Gospodaria s�rbeasca - femeia re-creaza lumea - </strong>
+                            <strong>Gospodăria sârbească - femeia re-crează lumea -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb020a">Ext</a>
                             </div>
@@ -398,7 +477,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa de la Baușar - </strong>
+                            <strong>Casa din Băuțar -  </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb022a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb022b">Int</a>
@@ -412,7 +491,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Gospodaria de la Chizățău - </strong>
+                            <strong>Gospodăria de la Chizătău - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb023a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb023b">Int</a>
@@ -468,7 +547,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa deporta?ilor �n Baragan - </strong>
+                            <strong>Casa deportaților în Bărăgan -  </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb027a">Ext</a>
                             </div>
@@ -481,7 +560,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa na?ionala - </strong>
+                            <strong>Casa națională -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb028a">Ext</a>
                             </div>
@@ -494,7 +573,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Replica unei gospodarii s�rbe?ti din zona Ciacova-Deta - </strong>
+                            <strong>Replica unei gospodării sârbești din zona Ciacova-Deta -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb029a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb029b">Int</a>
@@ -508,7 +587,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Casa de olar de la Birchi? - </strong>
+                            <strong>Casa de olar de la Birchiș - </strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb030a">Ext</a>
                                 <a class="waves-effect waves-light btn bg-primary" href="http://tm.autocom.ro/index.php?name=msb030b">Int</a>
@@ -535,7 +614,7 @@
                 <div class="grid-example col s12">
                     <div class="col-in">
                         <p style="display: flex; justify-content: space-evenly;">
-                            <strong>Oloini?ele din Banat - </strong>
+                            <strong>Oloinițele din Banat -</strong>
                             <div>
                                 <a class="waves-effect waves-light btn bg-primary" href="https://tm.autocom.ro/index.php?name=msb032a">Ext</a>
                             </div>
@@ -628,7 +707,7 @@
 <div class="footer-menu circular">
     <ul>
         <li >
-        <a href="home.html" >      <i class="mdi mdi-home"></i>
+        <a href="index.html" >      <i class="mdi mdi-home"></i>
         <span>Home</span>
         </a>    </li>
           <li >
@@ -643,10 +722,7 @@
         <a href="list.html"  class="active">      <i class="mdi mdi-beaker" ></i>
         <span>List</span>
         </a>    </li>
-          <li >
-        <a href="index.html" >      <i class="mdi mdi-subdirectory-arrow-right"></i>
-        <span>Exit</span>
-        </a>    </li>
+    
         
     </ul>
   </div>
@@ -684,6 +760,12 @@
 
 
 <script src="assets/js/preloader.js"></script>
+<script>
+    window.addEventListener('beforeinstallprompt', (event) => {
+        // Prevent the default browser install prompt
+      event.preventDefault();
+    });
+  </script>
 </body>
 
 </html>

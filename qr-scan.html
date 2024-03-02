@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Muzeul Satului Bănățean Mobile App: Media Box</title>
+    <title>MSB Audio Guide</title>
     <meta content="Muzeul Satului Bănățean Mobile App" name="description" />
     <meta content="themepassion" name="author" />
 
@@ -14,6 +14,11 @@
       content="assets/images/icons/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/icons/logo-msb-554x884.png"
+    />
 
     <!-- CORE CSS FRAMEWORK - START -->
     <link
@@ -115,8 +120,8 @@
       <div class="nav-wrapper container">
         <a id="logo-container" href="index.html" class="brand-logo">
           <img
-            style="width: 17%; padding-top: 5px"
-            src="assets/images/icons/android-icon-72x72.png"
+            style="max-height: 45%"
+            src="assets/images/icons/logo-msb-554x884.png"
             alt=""
           />
           MSB
@@ -219,7 +224,7 @@
     <div class="footer-menu circular">
       <ul>
         <li>
-          <a href="home.html">
+          <a href="index.html">
             <i class="mdi mdi-home"></i>
             <span>Home</span>
           </a>
@@ -240,12 +245,6 @@
           <a href="list.html">
             <i class="mdi mdi-beaker"></i>
             <span>List</span>
-          </a>
-        </li>
-        <li>
-          <a href="index.html">
-            <i class="mdi mdi-subdirectory-arrow-right"></i>
-            <span>Exit</span>
           </a>
         </li>
       </ul>
@@ -295,9 +294,7 @@
         // If found you qr code
         function onScanSuccess(decodeText, decodeResult) {
           // alert("You Qr is : " + decodeText, decodeResult);
-
-          window.location.href =
-            "https://tm.autocom.ro/index.php?name=msb" + decodeText;
+          window.location.href = "https://" + decodeText;
         }
 
         let htmlscanner = new Html5QrcodeScanner("my-qr-reader", {
@@ -309,6 +306,13 @@
         });
 
         htmlscanner.render(onScanSuccess);
+      });
+    </script>
+
+    <script>
+      window.addEventListener("beforeinstallprompt", (event) => {
+        // Prevent the default browser install prompt
+        event.preventDefault();
       });
     </script>
   </body>

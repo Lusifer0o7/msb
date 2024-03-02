@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MSB</title>
+    <title>MSB Audio Guide </title>
     <meta content="Odis Mobile App" name="description" />
     <meta content="themepassion" name="author" />
 
@@ -11,9 +11,14 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta
       name="msapplication-TileImage"
-      content="assets/images/icons/ms-icon-144x144.png"
+      content="assets/images/icons/logo-msb-554x884.png"
     />
     <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/icons/logo-msb-554x884.png"
+    />
 
     <!-- CORE CSS FRAMEWORK - START -->
     <link
@@ -99,11 +104,11 @@
     <nav class="fix_topscroll logo_on_fixed  topbar navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="index.html" class=" brand-logo " >
-            <img
-              style="width: 17%; padding-top: 5px;"
-             src="assets/images/icons/android-icon-72x72.png" alt=""/>
-            MSB
-          </a>     
+          <img
+            style="max-height: 45%;"
+           src="assets/images/icons/logo-msb-554x884.png" alt=""/>
+          MSB
+        </a>  
           
           <a href="#" data-target="" class="waves-effect waves-circle navicon back-button htmlmode show-on-large "><i class="mdi mdi-chevron-left" data-page=""></i></a>
     
@@ -277,7 +282,7 @@
     <div class="footer-menu circular">
       <ul>
         <li>
-          <a href="home.html">
+          <a href="index.html">
             <i class="mdi mdi-home"></i>
             <span>Home</span>
           </a>
@@ -300,12 +305,7 @@
             <span>List</span>
           </a>
         </li>
-        <li>
-          <a href="index.html">
-            <i class="mdi mdi-subdirectory-arrow-right"></i>
-            <span>Exit</span>
-          </a>
-        </li>
+      
       </ul>
     </div>
 
@@ -345,35 +345,6 @@
       }
     </script>
 
-
-    <!-- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var dropdowns = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(dropdowns, {coverTrigger: false});
-
-    var dropdownItems = document.querySelectorAll('#languageDropdown li');
-    dropdownItems.forEach(function(item) {
-      item.addEventListener('click', function() {
-        var selectedLanguage = localStorage.getItem('selectedLanguage');
-        var audio = document.getElementById('audio-content')
-        
-        if (selectedLanguage === "english") {
-          audio.src = "assets/audio/msb001a-en.mp3"
-          audio.load()
-          document.getElementById("englishText").style.display = "block";
-          document.getElementById("romanianText").style.display = "none";
-          document.getElementById('selectedLanguage').innerHTML= `English`;
-        } else if (selectedLanguage === "romanian") {
-          audio.src = "assets/audio/msb001a-ro.mp3"
-          audio.load()
-          document.getElementById("englishText").style.display = "none";
-          document.getElementById("romanianText").style.display = "block";
-          document.getElementById('selectedLanguage').innerHTML= `Romanian`;
-        }
-      });
-    });
-  });
-</script> -->
 
 <script>
   // Function to set the selected language
@@ -424,6 +395,12 @@
     var instances = M.Dropdown.init(dropdowns, options);
   });
 </script>
+<script>
+      window.addEventListener('beforeinstallprompt', (event) => {
+          // Prevent the default browser install prompt
+        event.preventDefault();
+      });
+  </script>
     
   </body>
 </html>

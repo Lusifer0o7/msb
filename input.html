@@ -6,16 +6,21 @@
   
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muzeul Satului Bănățean Mobile App: Media Box</title>
+  <title>MSB Audio Guide </title>
   <meta content="Muzeul Satului Bănățean Mobile App" name="description" />
   <meta content="themepassion" name="author" />
+  <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/icons/logo-msb-554x884.png"
+    />
 
 
   <!-- App Icons -->
   
   <link rel="manifest" href="assets/images/icons/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="assets/images/icons/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="assets/images/icons/logo-msb-554x884.png">
   <meta name="theme-color" content="#ffffff">
 
 
@@ -69,6 +74,7 @@
         background-color: #007bff;
         color: #fff;
     }
+    
 </style>
 
   
@@ -92,10 +98,10 @@
   <div class="nav-wrapper container">
     <a id="logo-container" href="index.html" class=" brand-logo " >
       <img
-        style="width: 17%; padding-top: 5px;"
-       src="assets/images/icons/android-icon-72x72.png" alt=""/>
+        style="max-height: 45%;"
+       src="assets/images/icons/logo-msb-554x884.png" alt=""/>
       MSB
-    </a>    
+    </a>  
       
       <a href="#" data-target="" class="waves-effect waves-circle navicon back-button htmlmode show-on-large "><i class="mdi mdi-chevron-left" data-page=""></i></a>
     
@@ -148,18 +154,18 @@
                         <br><br>
                         <div style="display: flex; justify-content: center; width: 100%;">
                           <div id="digitButtons" class="center">
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(1)">1</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(2)">2</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(3)">3</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(4)">4</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(5)">5</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(6)">6</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(7)">7</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(8)">8</button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(9)">9</button>
-                            <button class="waves-effect waves-light pink lighten-2" onclick="deleteAll()"><i class="mdi mdi-close-circle-outline"></i></button>
-                            <button class="waves-effect waves-light cyan" onclick="addDigit(0)">0</button>
-                            <button class="waves-effect waves-light teal lighten-2" onclick="redirectToCode()"><i class="mdi mdi-check"></i></button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(1)">1</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(2)">2</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(3)">3</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(4)">4</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(5)">5</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(6)">6</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(7)">7</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(8)">8</button>
+                            <button class="waves-effect waves-light btn-large bg-primary " onclick="addDigit(9)">9</button>
+                            <button class="waves-effect waves-light btn-large pink lighten-2" onclick="clearLastDigit()"><i class="mdi mdi-backspace"></i></button>
+                            <button class="waves-effect waves-light btn-large " onclick="addDigit(0)">0</button>
+                            <button class="waves-effect waves-light btn-large teal darken-2" onclick="redirectToCode()"><i class="mdi mdi-check"></i></button>
                             </div>
                         </div>
                         
@@ -232,7 +238,7 @@
 <div class="footer-menu circular">
   <ul>
       <li >
-      <a href="home.html" >      <i class="mdi mdi-home"></i>
+      <a href="index.html" >      <i class="mdi mdi-home"></i>
       <span>Home</span>
       </a>    </li>
         <li >
@@ -247,10 +253,7 @@
       <a href="list.html" >      <i class="mdi mdi-beaker"></i>
       <span>List</span>
       </a>    </li>
-        <li >
-          <a href="index.html" >      <i class="mdi mdi-subdirectory-arrow-right"></i>
-            <span>Exit</span>
-            </a>   </li>
+     
       
   </ul>
 </div>
@@ -286,6 +289,13 @@
 
 <!-- END CORE TEMPLATE JS - END -->
 
+<script>
+  window.addEventListener('beforeinstallprompt', (event) => {
+      // Prevent the default browser install prompt
+    event.preventDefault();
+  });
+</script>
+
 
 <script src="assets/js/preloader.js"></script>
 <script>
@@ -296,14 +306,16 @@
     function redirectToCode() {
     var code = document.getElementById("code").value.trim();
     if (code) {
-        window.location.href =  "item.html";
+        window.location.href =  "https://qrc.ro/"+code;
       }
 
     }
-    function deleteAll() {
-      var input = document.getElementById("code");
-      input.value = "";
+    function clearLastDigit() {
+        var input = document.getElementById("code");
+        var value = input.value;
+        input.value = value.slice(0, -1);
     }
+    
 </script>
     
 </body>

@@ -8,7 +8,7 @@
   "start_url": "https://msb-project.onrender.com/index.html",
   "background_color": "#ffffff",
   "theme_color": "#ff8a65",
-  "display": "standalone",
+  "display": "fullscreen",
   "icons": [
     {
       "src": "android-icon-36x36.png",
