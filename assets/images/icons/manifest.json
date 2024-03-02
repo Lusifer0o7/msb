@@ -1,7 +1,7 @@
 {
-  "name": "Muzeul Satului Bănățean Mobile App",
+  "name": "Muzeul Satului Bănățean Audio Guide",
   "short_name": "Muzeul Satului Bănățean",
-  "description": "Multi Purpose PWA Mobile App",
+  "description": "MSB Audio Guide",
   "scope": ".",
   "orientation": "portrait",
   "lang": "en-US",
