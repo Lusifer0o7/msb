@@ -1,7 +1,7 @@
 {
   "name": "MSB Audio Guide",
-  "short_name": "Muzeul Satului Bănățean",
-  "description": "MSB Audio Guide",
+  "short_name": "MSB",
+  "description": "Muzeul Satului Bănățean Audio Guide",
   "scope": ".",
   "orientation": "portrait",
   "lang": "en-US",
