@@ -39,6 +39,12 @@
       "src": "android-launchericon-512-512",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "android-launchericon-512-512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
