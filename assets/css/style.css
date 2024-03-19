@@ -242,3 +242,15 @@ TABLE OF CONTENTS:
 @import url("_actions.css");
 @import url("_menu-effect.css");
 @import url("_site-darkmode.css");
+
+nav .input-field input {
+  width: 100%;
+  padding-top: 0;
+  background: transparent;
+}
+nav .navicon.back-button {
+  margin: 0;
+}
+.container.has-pagehead {
+  min-height: 60px;
+}

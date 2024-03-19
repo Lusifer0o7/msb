@@ -28,5 +28,4 @@ window.addEventListener("beforeinstallprompt", (event) => {
   // Prevent the default browser install prompt
   event.preventDefault();
   installPrompt = event;
-  console.log(first);
 });

@@ -91,7 +91,7 @@ nav .navicon.nav-site-mode i {
   nav .navicon.nav-site-mode,
   nav .navicon.back-button,
   nav .navicon.sidenav-trigger {
-    margin: 14px 15px 14px -15px;
+    margin: 0;
   }
 }
 
