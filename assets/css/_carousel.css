@@ -33,7 +33,7 @@
 }
 .carousel.carousel-fullscreen .indicators{
   position: absolute;
-  bottom: 80px;
+  bottom: 5px;
 }
 [data-footer_menu="hide"] .carousel.carousel-fullscreen .indicators{
   bottom: 40px;
@@ -228,7 +228,7 @@
 .carousel-container,
 .about_carousel,
 .carousel-slider.home_carousel{
-  height: 400px !important;
+  height: 300px !important;
 }
 
 .carousel-slider.home_carousel .item-content{

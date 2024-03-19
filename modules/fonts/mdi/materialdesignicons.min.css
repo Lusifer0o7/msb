@@ -22,12 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.mdi-access-point:before {
-  content: "\F002";
-}
-.mdi-access-point-network:before {
-  content: "\F003";
-}
+
 .mdi-account:before {
   content: "\F004";
 }
