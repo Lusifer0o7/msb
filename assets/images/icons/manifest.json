@@ -2,7 +2,7 @@
   "name": "MSB Audio Guide",
   "short_name": "MSB Audio Guide",
   "description": "Muzeul Satulului Banatean Audio Guide",
-  "scope": ".",
+  "scope": "",
   "orientation": "portrait",
   "lang": "en-US",
   "start_url": "index.html",
